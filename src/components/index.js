@@ -10,8 +10,10 @@ import Contact from "./Contact";
 import CanvasLoader from "./Loader";
 import StarsCanvas from "./canvas/Stars";
 import CustomCursor from "./CustomCursor";
+import ScrollProgress from "./ScrollProgress";
 import ErrorBoundary from "./ErrorBoundary";
 import Achievements from "./Achievements";
+import Footer from "./Footer";
 
 
 export {
@@ -29,6 +31,8 @@ export {
   ComputersCanvas,
   StarsCanvas,
   CustomCursor,
+  ScrollProgress,
   ErrorBoundary,
   Achievements,
+  Footer,
 };

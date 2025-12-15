@@ -37,6 +37,13 @@ const heroInfo = {
   name: "Gopi Jagadheesh",
   title: "Software & AI Engineer | Building Practical AI Systems",
   image: profile,
+  roles: [
+    "AI/ML Engineer",
+    "Full-Stack Developer",
+    "Agentic AI Specialist",
+    "LLM Developer",
+    "Problem Solver",
+  ],
 };
 
 const aboutInfo = {
@@ -230,6 +237,14 @@ const projects = [
     ],
     image: appolice,
     source_code_link: "https://github.com/Itz-gopi204",
+    features: [
+      "OCR-based text extraction from scanned legal documents",
+      "NLP pipeline for entity recognition and data structuring",
+      "FastAPI backend with async processing for scalability",
+      "Real-time document processing dashboard",
+      "Export to multiple formats (JSON, CSV, PDF reports)",
+    ],
+    impact: "Reduced manual document processing time by 95% for AP Police Department, processing 1000+ documents daily with 98% accuracy.",
   },
   {
     name: "GenAI Chatbot",
@@ -251,6 +266,14 @@ const projects = [
     ],
     image: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
     source_code_link: "https://github.com/Itz-gopi204",
+    features: [
+      "Agentic RAG architecture for contextual responses",
+      "Whisper integration for speech-to-text in multiple languages",
+      "Real-time TTS for natural voice responses",
+      "LangGraph for complex conversation flows",
+      "Vector database for efficient knowledge retrieval",
+    ],
+    impact: "Achieved 95% accuracy in knowledge retrieval with sub-second response times, supporting 5+ languages.",
   },
   {
     name: "FloodGuard",
@@ -270,6 +293,14 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
+    features: [
+      "U-Net and SAM models for flood area segmentation",
+      "Real-time weather data integration via OpenWeather API",
+      "SMS/WhatsApp alerts via Twilio for affected areas",
+      "Geospatial visualization with interactive maps",
+      "Historical data analysis for prediction improvement",
+    ],
+    impact: "Achieved 26% higher prediction accuracy than existing systems, enabling proactive disaster response.",
     image: "https://images.unsplash.com/photo-1547683905-f686c993aae5?w=800&q=80",
     source_code_link: "https://github.com/Itz-gopi204",
   },
@@ -293,6 +324,14 @@ const projects = [
     ],
     image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
     source_code_link: "https://github.com/Itz-gopi204",
+    features: [
+      "MCP Protocol integration for secure financial data access",
+      "Gemini AI for natural language query understanding",
+      "Real-time transaction analysis and insights",
+      "Automated expense categorization and budgeting",
+      "Voice-enabled financial assistant capabilities",
+    ],
+    impact: "Finalist at Google Agentic AI Day hackathon, demonstrating innovative use of MCP Protocol for financial automation.",
   },
 ];
 

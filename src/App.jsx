@@ -1,6 +1,6 @@
 import { BrowserRouter } from "react-router-dom";
 
-import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, CustomCursor, ErrorBoundary, Achievements } from "./components";
+import { About, Contact, Experience, Hero, Navbar, Tech, Works, StarsCanvas, CustomCursor, ErrorBoundary, Achievements, ScrollProgress, Footer } from "./components";
 
 const App = () => {
   return (
@@ -20,7 +20,9 @@ const App = () => {
             <Contact />
             <StarsCanvas />
           </div>
+          <Footer />
           <CustomCursor />
+          <ScrollProgress />
         </div>
       </ErrorBoundary>
     </BrowserRouter>

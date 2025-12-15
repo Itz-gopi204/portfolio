@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
@@ -54,7 +55,41 @@ const socialVariants = {
   }),
 };
 
+// Typing animation hook
+const useTypingEffect = (texts, typingSpeed = 100, deletingSpeed = 50, pauseDuration = 2000) => {
+  const [displayText, setDisplayText] = useState("");
+  const [textIndex, setTextIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    const currentText = texts[textIndex];
+
+    const timeout = setTimeout(() => {
+      if (!isDeleting) {
+        if (displayText.length < currentText.length) {
+          setDisplayText(currentText.slice(0, displayText.length + 1));
+        } else {
+          setTimeout(() => setIsDeleting(true), pauseDuration);
+        }
+      } else {
+        if (displayText.length > 0) {
+          setDisplayText(displayText.slice(0, -1));
+        } else {
+          setIsDeleting(false);
+          setTextIndex((prev) => (prev + 1) % texts.length);
+        }
+      }
+    }, isDeleting ? deletingSpeed : typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [displayText, isDeleting, textIndex, texts, typingSpeed, deletingSpeed, pauseDuration]);
+
+  return displayText;
+};
+
 const Hero = () => {
+  const typedRole = useTypingEffect(heroInfo.roles || ["AI/ML Engineer"], 100, 50, 2000);
+
   return (
     <section className={`relative w-full h-screen mx-auto`}>
       <motion.div
@@ -95,12 +130,30 @@ const Hero = () => {
               {heroInfo.name}
             </motion.span>
           </motion.h1>
+
+          {/* Typing Animation */}
+          <motion.div
+            variants={itemVariants}
+            className={`${styles.heroSubText} mt-2 text-white-100 h-[40px] sm:h-[50px]`}
+          >
+            <span className="text-secondary">I'm a </span>
+            <span className="text-[#915EFF] font-semibold">{typedRole}</span>
+            <motion.span
+              animate={{ opacity: [1, 0] }}
+              transition={{ duration: 0.5, repeat: Infinity, repeatType: "reverse" }}
+              className="text-[#915EFF] ml-1"
+            >
+              |
+            </motion.span>
+          </motion.div>
+
           <motion.p
             variants={itemVariants}
-            className={`${styles.heroSubText} mt-2 text-white-100`}
+            className="text-secondary text-[14px] sm:text-[16px] mt-2 max-w-lg"
           >
-            {heroInfo.title}
+            Building AI-powered solutions that solve real-world problems
           </motion.p>
+
           <div className="flex flex-row gap-5 mt-5">
             {socialLinks.map((link, index) => (
               <motion.div
