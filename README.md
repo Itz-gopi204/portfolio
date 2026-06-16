@@ -4,7 +4,7 @@
   <br />
 
   <h1 align="center">Gopi Jagadheesh Mahamkali</h1>
-  <h3 align="center">AI/ML Engineer | Full-Stack Developer | Agentic AI Specialist</h3>
+  <h3 align="center">Software Engineer | AI/ML Engineer | Full-Stack Developer | Agentic AI Specialist</h3>
 
   <div>
     <img src="https://img.shields.io/badge/-React_JS-black?style=for-the-badge&logoColor=white&logo=react&color=61DAFB" alt="react.js" />
