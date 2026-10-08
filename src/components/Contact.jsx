@@ -1,45 +1,35 @@
-import React, { useRef, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-
-import { styles } from "../styles";
-import { EarthCanvas } from "./canvas";
-import { SectionWrapper } from "../hoc";
-import { slideIn } from "../utils/motion";
-import { socialLinks } from "../constants";
-
-const inputClass =
-  "w-full bg-[#0d0b1a] border border-white/10 focus:border-[#915EFF]/70 py-4 px-5 placeholder:text-secondary/60 text-white rounded-xl outline-none font-medium transition-all duration-200 focus:shadow-[0_0_16px_rgba(145,94,255,0.2)]";
+import { email, phone, socialLinks } from "../constants";
+import Reveal from "./Reveal";
 
 const Contact = () => {
-  const formRef = useRef();
+  const reduce = useReducedMotion();
   const [form, setForm] = useState({ name: "", email: "", message: "" });
   const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState(null); // "success" | "error" | null
+  const [status, setStatus] = useState(null);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const handleChange = (event) => {
+    const { name, value } = event.target;
     setForm((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    event.preventDefault();
     setLoading(true);
     setStatus(null);
 
-    const serviceId  = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
+    const serviceId = import.meta.env.VITE_APP_EMAILJS_SERVICE_ID;
     const templateId = import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID;
-    const publicKey  = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
+    const publicKey = import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY;
 
     if (!serviceId || !templateId || !publicKey) {
-      // Fallback: open mailto if EmailJS not configured
-      const subject = encodeURIComponent(`Portfolio contact from ${form.name}`);
-      const body = encodeURIComponent(
-        `Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`
-      );
-      window.open(`mailto:gopimahamkali3101@gmail.com?subject=${subject}&body=${body}`);
+      const subject = encodeURIComponent(`Portfolio note from ${form.name}`);
+      const body = encodeURIComponent(`Name: ${form.name}\nEmail: ${form.email}\n\n${form.message}`);
+      window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
       setLoading(false);
-      setStatus("success");
+      setStatus("opened");
       setForm({ name: "", email: "", message: "" });
       return;
     }
@@ -49,192 +39,125 @@ const Contact = () => {
         serviceId,
         templateId,
         {
-          from_name:  form.name,
-          to_name:    "Gopi",
+          from_name: form.name,
+          to_name: "Gopi",
           from_email: form.email,
-          to_email:   "gopimahamkali3101@gmail.com",
-          message:    form.message,
+          to_email: email,
+          message: form.message,
         },
         publicKey
       )
       .then(() => {
         setLoading(false);
-        setStatus("success");
+        setStatus("sent");
         setForm({ name: "", email: "", message: "" });
       })
-      .catch((error) => {
+      .catch(() => {
         setLoading(false);
         setStatus("error");
-        console.error(error);
       });
   };
 
+  const fieldClass =
+    "mt-1.5 w-full rounded-xl border border-line bg-night/60 px-4 py-3 text-cream outline-none transition placeholder:text-mist/60 focus:border-mint";
+
   return (
-    <div className="xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden">
-      <motion.div
-        variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-[#0d0b1a] border border-white/8 p-8 rounded-2xl"
-        style={{ boxShadow: "0 4px 40px rgba(0,0,0,0.4)" }}
-      >
-        <p className={styles.sectionSubText}>Get in touch</p>
-        <h3 className={styles.sectionHeadText}>Contact.</h3>
+    <section id="contact" className="scroll-mt-20">
+      <div className="mx-auto grid max-w-page gap-10 px-5 py-16 sm:px-8 sm:py-24 md:grid-cols-[0.85fr_1.15fr]">
+        <Reveal>
+          <p className="text-sm font-medium uppercase tracking-[0.16em] text-mint">Contact</p>
+          <h2 className="mt-2 font-serif text-4xl tracking-tight text-cream sm:text-5xl">Say hello</h2>
+          <p className="mt-4 max-w-sm leading-relaxed text-mist">
+            If you have a role, a project, or a problem worth building for, send a note. I read everything.
+          </p>
+          <ul className="mt-6 space-y-2 text-sm">
+            <li>
+              <a className="text-cream transition-colors hover:text-mint" href={`mailto:${email}`}>
+                {email}
+              </a>
+            </li>
+            <li>
+              <a className="text-cream transition-colors hover:text-mint" href={`tel:${phone.replace(/\s/g, "")}`}>
+                {phone}
+              </a>
+            </li>
+            {socialLinks
+              .filter((link) => link.name !== "Email")
+              .map((link) => (
+                <li key={link.name}>
+                  <a className="text-cream transition-colors hover:text-mint" href={link.url} target="_blank" rel="noreferrer">
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+          </ul>
+        </Reveal>
 
-        <form
-          ref={formRef}
-          onSubmit={handleSubmit}
-          className="mt-10 flex flex-col gap-6"
-        >
-          <label className="flex flex-col gap-2">
-            <span className="text-white/80 text-[14px] font-semibold uppercase tracking-wider">
-              Your Name
-            </span>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="What's your name?"
-              required
-              className={inputClass}
-            />
-          </label>
-
-          <label className="flex flex-col gap-2">
-            <span className="text-white/80 text-[14px] font-semibold uppercase tracking-wider">
-              Your Email
-            </span>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="your@email.com"
-              required
-              className={inputClass}
-            />
-          </label>
-
-          <label className="flex flex-col gap-2">
-            <span className="text-white/80 text-[14px] font-semibold uppercase tracking-wider">
+        <Reveal delay={0.1}>
+          <motion.form
+            onSubmit={handleSubmit}
+            whileHover={reduce ? undefined : { y: -4 }}
+            className="rounded-2xl border border-line bg-card/80 p-6 shadow-glow sm:p-7"
+          >
+            <label className="block text-sm text-cream" htmlFor="name">
+              Name
+              <input
+                id="name"
+                name="name"
+                required
+                value={form.name}
+                onChange={handleChange}
+                className={fieldClass}
+                placeholder="Your name"
+              />
+            </label>
+            <label className="mt-4 block text-sm text-cream" htmlFor="email">
+              Email
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                value={form.email}
+                onChange={handleChange}
+                className={fieldClass}
+                placeholder="you@email.com"
+              />
+            </label>
+            <label className="mt-4 block text-sm text-cream" htmlFor="message">
               Message
-            </span>
-            <textarea
-              rows={6}
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              placeholder="What would you like to say?"
-              required
-              className={`${inputClass} resize-none`}
-            />
-          </label>
-
-          {/* Status messages */}
-          <AnimatePresence>
-            {status === "success" && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                className="flex items-center gap-3 bg-emerald-500/10 border border-emerald-500/30 rounded-xl px-4 py-3"
-              >
-                <span className="text-2xl">✅</span>
-                <p className="text-emerald-400 text-[14px] font-medium">
-                  Message sent! I&apos;ll get back to you soon.
-                </p>
-              </motion.div>
+              <textarea
+                id="message"
+                name="message"
+                required
+                rows={5}
+                value={form.message}
+                onChange={handleChange}
+                className={fieldClass}
+                placeholder="What would you like to talk about?"
+              />
+            </label>
+            <motion.button
+              type="submit"
+              disabled={loading}
+              whileHover={reduce ? undefined : { y: -2 }}
+              whileTap={reduce ? undefined : { scale: 0.98 }}
+              className="mt-5 rounded-full bg-mint px-5 py-2.5 text-sm font-medium text-night disabled:opacity-60"
+            >
+              {loading ? "Sending…" : "Send message"}
+            </motion.button>
+            {status === "sent" && <p className="mt-3 text-sm text-mint">Message sent. I'll get back to you.</p>}
+            {status === "opened" && (
+              <p className="mt-3 text-sm text-mint">Your email app should be open with the message ready.</p>
             )}
             {status === "error" && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0 }}
-                className="flex items-center gap-3 bg-red-500/10 border border-red-500/30 rounded-xl px-4 py-3"
-              >
-                <span className="text-2xl">⚠️</span>
-                <p className="text-red-400 text-[14px] font-medium">
-                  Something went wrong. Try emailing directly at{" "}
-                  <a
-                    href="mailto:gopimahamkali3101@gmail.com"
-                    className="underline"
-                  >
-                    gopimahamkali3101@gmail.com
-                  </a>
-                </p>
-              </motion.div>
+              <p className="mt-3 text-sm text-red-500">That didn't send. Email me directly at {email}.</p>
             )}
-          </AnimatePresence>
-
-          <motion.button
-            type="submit"
-            disabled={loading}
-            whileHover={{ scale: loading ? 1 : 1.02 }}
-            whileTap={{ scale: loading ? 1 : 0.98 }}
-            className="relative w-fit py-3 px-10 rounded-xl text-white font-bold text-[15px] overflow-hidden transition-all duration-200 disabled:opacity-60"
-            style={{
-              background: "linear-gradient(135deg, #915EFF 0%, #7c3aed 100%)",
-              boxShadow: "0 4px 20px rgba(145,94,255,0.35)",
-            }}
-          >
-            {loading ? (
-              <span className="flex items-center gap-2">
-                <motion.span
-                  animate={{ rotate: 360 }}
-                  transition={{ duration: 0.8, repeat: Infinity, ease: "linear" }}
-                  className="inline-block w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
-                />
-                Sending...
-              </span>
-            ) : (
-              "Send Message"
-            )}
-          </motion.button>
-        </form>
-
-        {/* Direct contact links */}
-        <div className="mt-8 pt-6 border-t border-white/8">
-          <p className="text-secondary text-[13px] mb-4 uppercase tracking-wider font-semibold">
-            Or reach me directly
-          </p>
-          <div className="flex flex-row gap-3">
-            {socialLinks.map((link) => (
-              <motion.a
-                key={link.name}
-                href={link.url}
-                target={link.name === "Email" ? "_self" : "_blank"}
-                rel="noopener noreferrer"
-                whileHover={{ scale: 1.12, y: -3 }}
-                whileTap={{ scale: 0.95 }}
-                className="w-11 h-11 rounded-full flex justify-center items-center transition-all duration-200"
-                style={{
-                  background: "rgba(21,16,48,0.8)",
-                  border: "1px solid rgba(145,94,255,0.25)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = "0 0 16px rgba(145,94,255,0.4)";
-                  e.currentTarget.style.borderColor = "rgba(145,94,255,0.6)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = "none";
-                  e.currentTarget.style.borderColor = "rgba(145,94,255,0.25)";
-                }}
-                title={link.name}
-              >
-                <img src={link.icon} alt={link.name} className="w-5 h-5 object-contain" />
-              </motion.a>
-            ))}
-          </div>
-        </div>
-      </motion.div>
-
-      <motion.div
-        variants={slideIn("right", "tween", 0.2, 1)}
-        className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
-      >
-        <EarthCanvas />
-      </motion.div>
-    </div>
+          </motion.form>
+        </Reveal>
+      </div>
+    </section>
   );
 };
 
-export default SectionWrapper(Contact, "contact");
+export default Contact;

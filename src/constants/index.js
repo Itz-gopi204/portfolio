@@ -1,282 +1,220 @@
-import {
-  mobile,
-  backend,
-  creator,
-  web,
-  reactjs,
-  git,
-  docker,
-  profile,
-  foursightai,
-  github,
-  linkedin,
-  email,
-  appolice,
-} from "../assets";
+import profile from "../assets/profile.png";
+import appolice from "../assets/appolice.png";
+import foursightai from "../assets/company/4sightai.png";
+import qualizeal from "../assets/company/qualizeal.png";
 
 export const navLinks = [
   { id: "about", title: "About" },
   { id: "work", title: "Work" },
+  { id: "projects", title: "Projects" },
   { id: "contact", title: "Contact" },
 ];
 
-const heroInfo = {
+export const profileImage = profile;
+
+export const hero = {
   name: "Gopi Jagadheesh",
-  title: "AI Engineer | Building Intelligent Systems That Matter",
-  image: profile,
+  role: "Software & AI Engineer",
+  summary:
+    "I build AI systems and backend APIs that turn messy documents, images, and workflows into tools people can actually use.",
+  location: "RGUKT Nuzvid · B.Tech Computer Science · May 2027",
 };
 
-const aboutInfo = {
-  introduction:
-    "I'm a Computer Science student (CGPA: 8.92) at RGUKT Nuzvid, passionate about building AI systems that solve real-world problems. I led development of DOCS2DATA for the Andhra Pradesh Police Department and built KAMAI, a multi-agent financial AI for India's 15M+ gig workers. I also deliver freelance full-stack web and mobile products end-to-end. I specialize in agentic AI, computer vision, and production-grade system development — from model pipelines and FastAPI microservices to client-ready applications.",
+export const about = {
+  paragraphs: [
+    "I'm a Computer Science student at RGUKT Nuzvid (CGPA 8.99). I like taking a real problem — a police form, a gig worker's budget, a clinic's website — and shipping something that works in production.",
+    "Most of my work sits between models and software: agent systems, computer vision, and FastAPI services, plus freelance web and mobile apps. I'm also a software engineer intern at Qualizeal, building RAG pipelines and backend APIs for an enterprise AI-testing platform.",
+  ],
 };
 
-const socialLinks = [
+export const education = [
   {
-    name: "GitHub",
-    url: "https://github.com/Gopi-Mahamkali",
-    icon: github,
+    school: "RGUKT Nuzvid",
+    detail: "B.Tech Computer Science & Engineering",
+    date: "Sep 2023 – May 2027",
+    note: "CGPA 8.99",
   },
   {
-    name: "LinkedIn",
-    url: "https://linkedin.com/in/gopi-mahamkali",
-    icon: linkedin,
-  },
-  {
-    name: "Email",
-    url: "mailto:gopimahamkali3101@gmail.com",
-    icon: email,
+    school: "RGUKT Nuzvid",
+    detail: "Pre-University Certificate",
+    date: "Dec 2021 – Aug 2023",
+    note: "CGPA 9.85",
   },
 ];
 
-const services = [
-  { title: "AI Engineer", icon: mobile },
-  { title: "Agentic AI Developer", icon: creator },
-  { title: "Computer Vision", icon: web },
-  { title: "Backend Developer", icon: backend },
+export const highlights = [
+  { value: "8.99", label: "CGPA at RGUKT Nuzvid" },
+  { value: "AIR 3863", label: "GATE DS & AI 2026" },
+  { value: "1st", label: "AI4Andhra Police Hackathon" },
 ];
 
-const technologies = [
-  // Languages
+export const socialLinks = [
+  { name: "GitHub", url: "https://github.com/Itz-gopi204" },
+  { name: "LinkedIn", url: "https://www.linkedin.com/in/Gopi-Mahamkali" },
+  { name: "LeetCode", url: "https://leetcode.com/u/gopi_3101/" },
+  { name: "Email", url: "mailto:gopimahamkali3101@gmail.com" },
+];
+
+export const email = "gopimahamkali3101@gmail.com";
+export const phone = "+91 8309383698";
+export const resumeUrl = "/resume.pdf";
+
+export const technologies = [
   {
-    name: "Python",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg",
     category: "Languages",
+    items: ["Python", "C++", "SQL"],
   },
   {
-    name: "C++",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg",
-    category: "Languages",
-  },
-  {
-    name: "SQL",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
-    category: "Languages",
-  },
-  // AI / ML
-  {
-    name: "PyTorch",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg",
     category: "AI / ML",
+    items: ["PyTorch", "LangChain", "LangGraph", "RAG", "Hugging Face", "scikit-learn", "OpenCV", "YOLO"],
   },
   {
-    name: "LangChain",
-    icon: "https://avatars.githubusercontent.com/u/126733545?s=200&v=4",
-    category: "AI / ML",
-  },
-  {
-    name: "LangGraph",
-    icon: "https://avatars.githubusercontent.com/u/126733545?s=200&v=4",
-    category: "AI / ML",
-  },
-  {
-    name: "HuggingFace",
-    icon: "https://huggingface.co/front/assets/huggingface_logo-noborder.svg",
-    category: "AI / ML",
-  },
-  {
-    name: "scikit-learn",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg",
-    category: "AI / ML",
-  },
-  {
-    name: "OpenCV",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg",
-    category: "AI / ML",
-  },
-  // Web & API
-  {
-    name: "FastAPI",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg",
     category: "Web & API",
+    items: ["FastAPI", "React", "Vite", "REST APIs"],
   },
   {
-    name: "React",
-    icon: reactjs,
-    category: "Web & API",
-  },
-  // DevOps & Tools
-  {
-    name: "Docker",
-    icon: docker,
-    category: "DevOps & Tools",
+    category: "Data",
+    items: ["PostgreSQL", "MongoDB", "MySQL", "Pinecone"],
   },
   {
-    name: "Git",
-    icon: git,
-    category: "DevOps & Tools",
-  },
-  {
-    name: "Azure",
-    icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg",
-    category: "DevOps & Tools",
+    category: "Tools",
+    items: ["Docker", "Git", "Azure", "Postman"],
   },
 ];
 
-const experiences = [
+export const experiences = [
   {
-    title: "AI Engineer Intern",
-    company_name: "4SightAI",
-    icon: foursightai,
-    iconBg: "#E6DEDD",
-    date: "Oct 2024 – March 2025",
+    title: "Software Development Engineer Intern",
+    company: "Qualizeal",
+    place: "Hyderabad",
+    date: "Jun 2026 – Present",
+    logo: qualizeal,
+    link: "https://qualizeal.com/",
+    linkLabel: "Company",
     points: [
-      "Led end-to-end development of DOCS2DATA for the AI4Andhra Police Pilot Project — extracted structured data from police documents, reducing manual processing by 90%.",
-      "Designed AI-driven document understanding pipelines combining Azure Document Intelligence and rule-based validation to extract, clean, and normalize unstructured data across diverse formats.",
-      "Built and deployed scalable FastAPI-based microservices for document ingestion, processing, and retrieval within a distributed system architecture.",
-      "Developed signature and stamp detection models using custom-trained YOLO-based architectures to validate authenticity of official documents.",
-      "Built a multi-agent AI system for road safety analysis using YOLO + Google Gemini for project RTGS, with 6 specialized agents for detecting fire, water hazards, potholes, heavy vehicles, waste, and fallen trees.",
+      "Built core backend modules for ValidAite, an enterprise AI-testing platform, covering 12 use cases with the RMTE framework — Risk, Metrics, Testing, and Evidence.",
+      "Designed modular FastAPI APIs that orchestrate those tests.",
+      "Engineered a RAG pipeline that writes prompts and ground-truth answers from uploaded documents, cutting manual QA-pair writing time by 60%.",
+    ],
+  },
+  {
+    title: "Software Engineer Intern",
+    company: "4SightAI",
+    place: "Vijayawada",
+    date: "Oct 2025 – Mar 2026",
+    logo: foursightai,
+    link: "https://drive.google.com/file/d/1f2v4SdQO-AxHeYMBXG1ckBTMNVhgW-yK/view",
+    linkLabel: "Work sample",
+    points: [
+      "Led DOCS2DATA for the AI4Andhra Police pilot — structured data from police documents, cutting manual processing by 90%.",
+      "Built document pipelines with Azure Document Intelligence and rule-based checks so messy files come out clean and consistent.",
+      "Shipped FastAPI microservices for document intake, processing, and retrieval.",
+      "Trained YOLO models to detect signatures and stamps, reaching 97% precision on scanned police documents.",
+      "Built a six-agent road-safety system (YOLO + Gemini) that flags fire, water, potholes, heavy vehicles, waste, and fallen trees, cutting manual review by 90%.",
     ],
   },
   {
     title: "Freelance Full-Stack Developer",
-    company_name: "Newbalan Pharmacy",
-    icon: "https://img.icons8.com/color/96/caduceus.png",
-    iconBg: "#1a2e1a",
+    company: "Newbalan Pharmacy",
     date: "2024",
-    isFreelance: true,
+    link: "https://newbalanpharmacy.com",
+    linkLabel: "Live site",
     points: [
-      "Built the Newbalan Pharmacy website (newbalanpharmacy.com) — a healthcare platform combining pharmacy retail and clinical consultations for a local medical shop & clinic.",
-      "Developed a companion mobile application for Newbalan Pharmacy, enabling patients to browse services, check products, and access clinic information on mobile devices.",
-      "Delivered end-to-end from requirements gathering and design to deployment and client handoff as a solo freelance engagement.",
+      "Built newbalanpharmacy.com — a site for a local pharmacy and clinic, covering products, services, and consultations.",
+      "Shipped a companion mobile app so patients can browse products and clinic info on their phone.",
+      "Handled the whole engagement alone, from the first conversation through design, build, and handoff.",
     ],
   },
 ];
 
-const testimonials = [];
-
-const projects = [
+export const projects = [
+  {
+    name: "Community Hero",
+    metric: "Live civic platform",
+    description:
+      "A civic AI co-pilot. React and FastAPI handle role-based tasks, and Gemini 1.5 Flash classifies hazards, finds duplicate locations, and checks before-and-after photos to confirm the work is done.",
+    tags: ["Python", "FastAPI", "MongoDB", "React"],
+    accent: "from-lime-200/50 via-emerald-400/10",
+    link: "https://vibe2-ship-pearl.vercel.app/",
+    linkLabel: "Live site",
+  },
   {
     name: "DOCS2DATA",
+    metric: "90% less manual work",
     description:
-      "AI-powered document intelligence system for Andhra Pradesh Police. Automated structured data extraction from police documents using Azure Document Intelligence + custom YOLO models, reducing manual processing by 90%. Won 1st place at AI4Andhra Police Hackathon.",
-    tags: [
-      { name: "python", color: "blue-text-gradient" },
-      { name: "fastapi", color: "green-text-gradient" },
-      { name: "computer-vision", color: "pink-text-gradient" },
-    ],
-    image: appolice,
-    source_code_link: "https://github.com/Gopi-Mahamkali",
+      "Document intelligence for the Andhra Pradesh Police. It pulls structured data out of police files with Azure Document Intelligence and custom YOLO models. First place at the AI4Andhra Police Hackathon.",
+    tags: ["Python", "FastAPI", "Computer vision"],
+    accent: "from-emerald-300/50 via-teal-400/10",
+    logo: appolice,
+    link: "https://github.com/Gopi-Mahamkali",
+    linkLabel: "GitHub",
+  },
+  {
+    name: "KAMAI",
+    metric: "12 agents, 200+ schemes",
+    description:
+      "A financial companion for India's gig workers. Twelve AutoGen agents on Azure OpenAI handle income, spending swings, budgets, and matches across 200+ government schemes.",
+    tags: ["AutoGen", "Azure OpenAI", "FastAPI"],
+    accent: "from-amber-200/50 via-orange-300/10",
+    link: "https://github.com/Gopi-Mahamkali",
+    linkLabel: "GitHub",
   },
   {
     name: "Drone Weapon Detection",
+    metric: "40% fewer false alarms",
     description:
-      "Two-stage detection pipeline using YOLOv8n for person detection followed by a custom-trained weapon identification model. Reduces false positives by restricting inference to person bounding boxes. FastAPI backend for real-time image/video inference.",
-    tags: [
-      { name: "pytorch", color: "blue-text-gradient" },
-      { name: "yolov8", color: "green-text-gradient" },
-      { name: "fastapi", color: "pink-text-gradient" },
-    ],
-    image: "https://images.unsplash.com/photo-1473968512647-3e447244af8f?w=800&q=80",
-    source_code_link: "https://github.com/Gopi-Mahamkali",
+      "Built with a teammate. YOLOv8n finds people, then a classifier looks for weapons only inside those boxes. Keeping inference on those regions cut latency and removed 40% of background false alarms. A FastAPI service runs it on images and video.",
+    tags: ["PyTorch", "YOLOv8", "FastAPI"],
+    accent: "from-violet-300/50 via-fuchsia-400/10",
+    link: "https://github.com/Itz-gopi204/drone-weapon-detection",
+    linkLabel: "GitHub",
   },
   {
-    name: "KAMAI – Financial AI",
+    name: "Newbalan Pharmacy",
+    metric: "Web and mobile, shipped",
     description:
-      "Multi-agent AI financial companion for India's 15M+ gig workers. Orchestrates 12 AutoGen agents powered by Azure OpenAI GPT-4 for income analysis, volatility forecasting, adaptive budgeting, and matching across 200+ government schemes.",
-    tags: [
-      { name: "autogen", color: "blue-text-gradient" },
-      { name: "azure-openai", color: "green-text-gradient" },
-      { name: "fastapi", color: "pink-text-gradient" },
-    ],
-    image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&q=80",
-    source_code_link: "https://github.com/Gopi-Mahamkali",
-  },
-  {
-    name: "Newbalan Web App",
-    description:
-      "Freelance project — built the Newbalan Pharmacy website (newbalanpharmacy.com), a healthcare platform combining pharmacy retail and clinical consultations. Full-stack development with modern UI, service listings, and intuitive patient experience.",
-    tags: [
-      { name: "react", color: "blue-text-gradient" },
-      { name: "fullstack", color: "green-text-gradient" },
-      { name: "freelance", color: "pink-text-gradient" },
-    ],
-    image: "https://images.unsplash.com/photo-1576671081837-49000212a370?w=800&q=80",
-    source_code_link: "https://newbalanpharmacy.com",
-    liveLink: "https://newbalanpharmacy.com",
-    isFreelance: true,
-  },
-  {
-    name: "Newbalan Mobile App",
-    description:
-      "Freelance project — companion mobile application for Newbalan Pharmacy. Patients can browse pharmacy products, access clinic information, and view services on mobile with a smooth, accessible cross-platform experience.",
-    tags: [
-      { name: "react-native", color: "blue-text-gradient" },
-      { name: "mobile", color: "green-text-gradient" },
-      { name: "freelance", color: "pink-text-gradient" },
-    ],
-    image: "https://images.unsplash.com/photo-1512678080530-7760d81faba6?w=800&q=80",
-    source_code_link: "https://github.com/Gopi-Mahamkali",
-    isFreelance: true,
+      "Freelance build for a pharmacy and clinic. The website lists services and products, and a mobile app lets patients check the same information on the go.",
+    tags: ["React", "React Native", "Freelance"],
+    accent: "from-sky-300/50 via-cyan-300/10",
+    link: "https://newbalanpharmacy.com",
+    linkLabel: "Live site",
   },
 ];
 
-const achievements = [
+export const achievements = [
   {
-    title: "All India Rank 3863 — GATE DS&AI 2026",
-    emoji: "🎯",
+    title: "All India Rank 3863 — GATE DS & AI 2026",
     organization: "GATE 2026",
-    description:
-      "Secured All India Rank 3863 in GATE Data Science & AI 2026 examination among thousands of nationwide candidates.",
+    description: "Ranked 3863 nationwide in the Data Science & AI paper.",
+    link: "https://drive.google.com/file/d/1DcvuRLzmBplGCN6SbQFVks2170giYQEN/view",
+    linkLabel: "Scorecard",
+  },
+  {
+    title: "200+ problems on LeetCode",
+    organization: "LeetCode",
+    description: "Solved 200+ problems across core data structures and algorithms.",
+    link: "https://leetcode.com/u/gopi_3101/",
+    linkLabel: "Profile",
   },
   {
     title: "Winner — AI4Andhra Police Hackathon",
-    emoji: "🥇",
-    organization: "Andhra Pradesh State Police Department",
+    organization: "Andhra Pradesh State Police",
     description:
-      "Secured 1st place for DOCS2DATA — GenAI-based document workflow automation system deployed for the Andhra Pradesh Police Department.",
+      "First place for DOCS2DATA, a document workflow system for the police department.",
   },
   {
     title: "Finalist — HackRx 6.0",
-    emoji: "🏆",
     organization: "Bajaj Finserv",
-    description:
-      "Finalist in HackRx 6.0, a GenAI-focused hackathon conducted by Bajaj Finserv — one of India's largest financial services companies.",
+    description: "Finalist in Bajaj Finserv's GenAI hackathon, among 1000+ teams.",
   },
   {
-    title: "Best UI/UX Award — Hack To Crack 2.0",
-    emoji: "🏅",
-    organization: "Hack To Crack 2.0 National Hackathon",
-    description:
-      "Won Best UI/UX Design and Implementation Award at Hack To Crack 2.0 for a computer-vision / analytics demo under the AIML domain.",
+    title: "Best UI/UX — Hack To Crack 2.0",
+    organization: "National hackathon",
+    description: "Best UI/UX award for a computer-vision demo in the AIML track.",
   },
   {
-    title: "1st Place — SIH Internal Hackathon",
-    emoji: "🚀",
+    title: "1st place — SIH internal hackathon",
     organization: "RGUKT Nuzvid",
-    description:
-      "Ranked 1st in the Smart India Hackathon (SIH) Internal Hackathon at university level, competing against 200+ teams.",
+    description: "First among 200+ teams in the Smart India Hackathon campus round.",
   },
 ];
-
-export {
-  services,
-  technologies,
-  experiences,
-  testimonials,
-  projects,
-  heroInfo,
-  aboutInfo,
-  socialLinks,
-  achievements,
-};

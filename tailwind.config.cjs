@@ -1,25 +1,27 @@
 /** @type {import('tailwindcss').Config} */
+const themed = (name) => `rgb(var(--${name}) / <alpha-value>)`;
+
 module.exports = {
   content: ["./src/**/*.{js,jsx}"],
-  mode: "jit",
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "white-100": "#f3f3f3",
+        night: themed("night"),
+        card: themed("card"),
+        cream: themed("cream"),
+        mist: themed("mist"),
+        line: themed("line"),
+        mint: themed("mint"),
+      },
+      fontFamily: {
+        sans: ["Outfit", "Segoe UI", "sans-serif"],
+        serif: ["Fraunces", "Georgia", "serif"],
+      },
+      maxWidth: {
+        page: "68rem",
       },
       boxShadow: {
-        card: "0px 35px 120px -15px #211e35",
-      },
-      screens: {
-        xs: "450px",
-      },
-      backgroundImage: {
-        "hero-pattern": "url('/src/assets/herobg.png')",
+        glow: "0 20px 60px -24px rgb(var(--mint) / 0.45)",
       },
     },
   },

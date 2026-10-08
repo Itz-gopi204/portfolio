@@ -4,7 +4,18 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/logo.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gopi</title>
+    <meta
+      name="description"
+      content="Gopi Jagadheesh — software and AI engineer building document intelligence, RAG systems, computer vision, and backend APIs."
+    />
+    <title>Gopi Jagadheesh — Software & AI Engineer</title>
+    <script>
+      try {
+        const saved = localStorage.getItem("theme");
+        const light = saved ? saved === "light" : matchMedia("(prefers-color-scheme: light)").matches;
+        if (light) document.documentElement.classList.add("light");
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>
