@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio-lime-zeta-85.vercel.app/sitemap.xml
+Sitemap: https://gopi-mahamkali.vercel.app/sitemap.xml
