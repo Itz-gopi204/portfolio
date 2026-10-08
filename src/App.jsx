@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Analytics } from "@vercel/analytics/react";
 import { About, Achievements, Contact, Experience, Hero, Navbar, Works } from "./components";
 import Backdrop from "./components/Backdrop";
 import { phone, socialLinks } from "./constants";
@@ -41,6 +42,7 @@ const App = () => {
           </div>
         </div>
       </motion.footer>
+      <Analytics />
     </div>
   );
 };
