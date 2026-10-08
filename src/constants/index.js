@@ -13,7 +13,7 @@ export const navLinks = [
 export const profileImage = profile;
 
 export const hero = {
-  name: "Gopi Jagadheesh",
+  name: "Gopi Mahamkali",
   role: "Software & AI Engineer",
   summary:
     "I build AI systems and backend APIs that turn messy documents, images, and workflows into tools people can actually use.",

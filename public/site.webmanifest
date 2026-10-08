@@ -1,0 +1,17 @@
+{
+  "name": "Gopi Mahamkali — Software & AI Engineer",
+  "short_name": "Gopi Mahamkali",
+  "description": "Portfolio of Gopi Mahamkali, a software and AI engineer.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#07080d",
+  "theme_color": "#07080d",
+  "icons": [
+    {
+      "src": "/logo.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

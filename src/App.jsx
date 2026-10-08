@@ -24,7 +24,7 @@ const App = () => {
       >
         <div className="mx-auto flex max-w-page flex-col gap-4 px-5 py-8 text-sm text-mist sm:flex-row sm:items-center sm:justify-between sm:px-8">
           <div>
-            <p className="font-serif text-base text-cream">Gopi Jagadheesh</p>
+            <p className="font-serif text-base text-cream">Gopi Mahamkali</p>
             <p className="mt-1">
               Software & AI engineer · RGUKT Nuzvid ·{" "}
               <a href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-cream">

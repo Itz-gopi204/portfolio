@@ -3,7 +3,7 @@
   <img src="public/logo.svg" alt="Logo" width="80" height="80">
   <br />
 
-  <h1 align="center">Gopi Jagadheesh Mahamkali</h1>
+  <h1 align="center">Gopi Mahamkali</h1>
   <h3 align="center">Software Engineer | AI/ML Engineer | Full-Stack Developer | Agentic AI Specialist</h3>
 
   <div>
@@ -162,7 +162,7 @@ This portfolio is ready for deployment on Vercel:
 
 ## Contact
 
-**Gopi Jagadheesh Mahamkali**
+**Gopi Mahamkali**
 
 - Email: gopimahamkali3101@gmail.com
 - LinkedIn: [gopi-mahamkali](https://linkedin.com/in/gopi-mahamkali)

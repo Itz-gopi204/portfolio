@@ -97,7 +97,7 @@ const Hero = () => {
           >
             <img
               src={profileImage}
-              alt="Portrait of Gopi Jagadheesh"
+              alt="Portrait of Gopi Mahamkali"
               className="aspect-[4/5] w-full object-cover object-[center_18%]"
             />
           </motion.div>
