@@ -49,8 +49,11 @@ const Navbar = () => {
       }`}
     >
       <div className="mx-auto flex h-16 max-w-page items-center justify-between px-5 sm:px-8">
-        <a href="#top" className="font-serif text-lg tracking-tight text-cream">
-          Gopi
+        <a href="#top" className="flex items-center gap-2 text-cream">
+          <span className="font-serif text-lg tracking-tight">Gopi</span>
+          <span className="hidden border-l border-line pl-2 text-[9px] font-semibold uppercase tracking-[0.18em] text-mint sm:inline">
+            AI Lab
+          </span>
         </a>
 
         <nav className="ml-auto hidden items-center gap-5 lg:gap-7 md:flex">

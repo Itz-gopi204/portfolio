@@ -79,6 +79,87 @@ body {
   mask-image: radial-gradient(ellipse at 50% 20%, black 15%, transparent 72%);
 }
 
+.lab-route {
+  stroke: rgb(var(--mint) / 0.22);
+  stroke-width: 1;
+  fill: none;
+  stroke-dasharray: 5 10;
+  animation: route-flow 12s linear infinite;
+}
+
+.lab-node {
+  fill: rgb(var(--night));
+  stroke: rgb(var(--mint) / 0.5);
+  stroke-width: 1;
+}
+
+.lab-frame {
+  background-image:
+    linear-gradient(rgb(var(--mint) / 0.7), rgb(var(--mint) / 0.7)),
+    linear-gradient(rgb(var(--mint) / 0.7), rgb(var(--mint) / 0.7)),
+    linear-gradient(rgb(var(--mint) / 0.7), rgb(var(--mint) / 0.7)),
+    linear-gradient(rgb(var(--mint) / 0.7), rgb(var(--mint) / 0.7));
+  background-position: left top, left top, right bottom, right bottom;
+  background-repeat: no-repeat;
+  background-size: 22px 1px, 1px 22px, 22px 1px, 1px 22px;
+}
+
+.lab-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgb(var(--mint));
+}
+
+.lab-kicker::before {
+  content: "";
+  width: 0.35rem;
+  height: 0.35rem;
+  border-radius: 999px;
+  background: rgb(var(--mint));
+  box-shadow: 0 0 12px rgb(var(--mint) / 0.8);
+}
+
+.data-chip {
+  border: 1px solid rgb(var(--line));
+  background: rgb(var(--card) / 0.72);
+  padding: 0.42rem 0.65rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(var(--mist));
+}
+
+.scan-line {
+  background: linear-gradient(90deg, transparent, rgb(var(--mint) / 0.7), transparent);
+  animation: scan 4.5s ease-in-out infinite;
+}
+
+@keyframes route-flow {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+@keyframes scan {
+  0%,
+  100% {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  30%,
+  70% {
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(340px);
+  }
+}
+
 .shimmer {
   background: linear-gradient(100deg, #6ee7b7 0%, #f4f0e8 45%, #6ee7b7 100%);
   background-size: 200% auto;
@@ -128,7 +209,9 @@ body {
   }
 
   .shimmer,
-  .card-shine::after {
+  .card-shine::after,
+  .lab-route,
+  .scan-line {
     animation: none;
     transition: none;
   }

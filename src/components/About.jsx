@@ -11,7 +11,7 @@ const About = () => {
   return (
     <section id="about" className="scroll-mt-20 mx-auto max-w-page px-5 py-16 sm:px-8 sm:py-24">
       <Reveal>
-        <p className="text-sm font-medium uppercase tracking-[0.16em] text-mint">About</p>
+        <p className="lab-kicker">About</p>
         <h2 className="mt-2 font-serif text-4xl tracking-tight text-cream sm:text-5xl">What I actually do</h2>
       </Reveal>
 
@@ -25,7 +25,7 @@ const About = () => {
         </div>
 
         <Reveal delay={0.12}>
-          <aside className="rounded-2xl border border-line bg-card/80 p-5">
+          <aside className="lab-frame rounded-2xl border border-line bg-card/80 p-5">
             <p className="text-xs font-medium uppercase tracking-[0.16em] text-mint">Quick profile</p>
             <dl className="mt-4 divide-y divide-line">
               {recruiterSnapshot.map((item) => (
@@ -42,7 +42,7 @@ const About = () => {
       <Reveal>
         <ul className="mt-8 grid gap-3 sm:grid-cols-2">
           {education.map((item) => (
-            <li key={item.detail} className="rounded-2xl border border-line bg-card/80 px-5 py-4">
+            <li key={item.detail} className="lab-frame rounded-2xl border border-line bg-card/80 px-5 py-4">
               <p className="text-sm text-mint">{item.note}</p>
               <p className="mt-1 font-medium text-cream">{item.detail}</p>
               <p className="mt-1 text-sm text-mist">
@@ -79,7 +79,7 @@ const About = () => {
           >
             <motion.div
               whileHover={reduce ? undefined : { y: -6 }}
-              className="card-shine h-full rounded-2xl border border-line bg-card/80 p-5"
+              className="card-shine lab-frame h-full rounded-2xl border border-line bg-card/80 p-5"
             >
               <h3 className="text-sm font-medium text-cream">{group.category}</h3>
               <ul className="mt-3 flex flex-wrap gap-2">

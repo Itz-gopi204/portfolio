@@ -9,7 +9,7 @@ const Works = () => {
     <section id="projects" className="scroll-mt-20">
       <div className="mx-auto max-w-page px-5 py-16 sm:px-8 sm:py-24">
         <Reveal>
-          <p className="text-sm font-medium uppercase tracking-[0.16em] text-mint">Projects</p>
+          <p className="lab-kicker">Projects</p>
           <h2 className="mt-2 font-serif text-4xl tracking-tight text-cream sm:text-5xl">Selected work</h2>
           <p className="mt-3 max-w-xl text-mist">
             Production systems, hackathon builds, and a freelance product that is live.
@@ -23,7 +23,7 @@ const Works = () => {
             <Reveal key={project.name} delay={(index % 2) * 0.08} className={featured ? "md:col-span-2" : ""}>
               <motion.article
                 whileHover={reduce ? undefined : { y: -8 }}
-                className={`card-shine group flex h-full flex-col rounded-2xl border border-line bg-card/80 ${
+                className={`card-shine lab-frame group flex h-full flex-col rounded-2xl border border-line bg-card/80 ${
                   featured ? "md:grid md:grid-cols-[16rem_1fr]" : ""
                 }`}
               >

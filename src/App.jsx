@@ -15,7 +15,7 @@ import { phone, socialLinks } from "./constants";
 
 const App = () => {
   return (
-    <div className="relative min-h-screen bg-night text-cream">
+    <div className="relative min-h-screen bg-night/90 text-cream">
       <Backdrop />
       <Navbar />
       <main>
@@ -38,7 +38,7 @@ const App = () => {
           <div>
             <p className="font-serif text-base text-cream">Gopi Mahamkali</p>
             <p className="mt-1">
-              Software & AI engineer · RGUKT Nuzvid ·{" "}
+              Software & AI engineer · Rajiv Gandhi University of Knowledge Technologies, Nuzvid ·{" "}
               <a href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-cream">
                 {phone}
               </a>

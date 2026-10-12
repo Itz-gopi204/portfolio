@@ -43,6 +43,12 @@ const Hero = () => {
             </a>
           </motion.p>
 
+          <motion.div variants={item} className="mt-5 flex flex-wrap gap-2">
+            <span className="data-chip">Focus: AI + backend</span>
+            <span className="data-chip">Mode: build → measure → ship</span>
+            <span className="data-chip">Status: active</span>
+          </motion.div>
+
           <motion.div variants={item} className="mt-8 flex flex-wrap items-center gap-3">
             <motion.a
               href={`mailto:${email}`}
@@ -82,7 +88,7 @@ const Hero = () => {
           initial={reduce ? false : { opacity: 0, scale: 0.92, y: 16 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.25, ease }}
-          className="relative mx-auto w-64 sm:w-72 md:justify-self-end"
+          className="lab-frame relative mx-auto w-64 p-2 sm:w-72 md:justify-self-end"
         >
           <motion.div
             aria-hidden
@@ -93,13 +99,24 @@ const Hero = () => {
           <motion.div
             animate={reduce ? undefined : { y: [0, -8, 0] }}
             transition={{ duration: 5.5, repeat: Infinity, ease: "easeInOut" }}
-            className="relative overflow-hidden rounded-[1.6rem] border border-cream/10 bg-card shadow-glow"
+            className="relative overflow-hidden rounded-[1.35rem] border border-cream/10 bg-card shadow-glow"
           >
             <img
               src={profileImage}
               alt="Portrait of Gopi Mahamkali"
               className="aspect-[4/5] w-full object-cover object-[center_18%]"
             />
+            <div className="pointer-events-none absolute inset-x-0 top-0 h-px scan-line" />
+            <div className="absolute left-3 top-3 rounded-sm border border-mint/30 bg-night/75 px-2 py-1 text-[9px] font-semibold uppercase tracking-[0.16em] text-mint backdrop-blur">
+              Profile / 001
+            </div>
+            <div className="absolute inset-x-3 bottom-3 flex items-center justify-between rounded-sm border border-line bg-night/80 px-3 py-2 text-[9px] uppercase tracking-[0.14em] text-mist backdrop-blur">
+              <span>Software + AI</span>
+              <span className="flex items-center gap-1.5 text-mint">
+                <span className="h-1.5 w-1.5 rounded-full bg-mint" />
+                Online
+              </span>
+            </div>
           </motion.div>
         </motion.div>
       </div>
@@ -114,9 +131,12 @@ const Hero = () => {
           <motion.div
             key={stat.label}
             whileHover={reduce ? undefined : { y: -4 }}
-            className="rounded-2xl border border-line bg-card/70 p-5 backdrop-blur"
+            className="lab-frame rounded-2xl border border-line bg-card/70 p-5 backdrop-blur"
             transition={{ delay: index * 0.05 }}
           >
+            <p className="mb-4 text-[9px] font-semibold uppercase tracking-[0.18em] text-mint">
+              Signal / 0{index + 1}
+            </p>
             <dt className="font-serif text-3xl text-cream">{stat.value}</dt>
             <dd className="mt-1 text-sm text-mist">{stat.label}</dd>
           </motion.div>

@@ -18,12 +18,12 @@ export const hero = {
   role: "Software & AI Engineer",
   summary:
     "I build AI systems and backend APIs that turn messy documents, images, and workflows into tools people can actually use.",
-  location: "RGUKT Nuzvid · B.Tech Computer Science · May 2027",
+  location: "Rajiv Gandhi University of Knowledge Technologies, Nuzvid · B.Tech Computer Science · May 2027",
 };
 
 export const about = {
   paragraphs: [
-    "I'm a Computer Science student at RGUKT Nuzvid (CGPA 8.99). I like taking a real problem — a police form, a gig worker's budget, a clinic's website — and shipping something that works in production.",
+    "I'm a Computer Science student at Rajiv Gandhi University of Knowledge Technologies, Nuzvid (CGPA 8.99). I like taking a real problem — a police form, a gig worker's budget, a clinic's website — and shipping something that works in production.",
     "Most of my work sits between models and software: agent systems, computer vision, and FastAPI services, plus freelance web and mobile apps. I'm also a software engineer intern at Qualizeal, building RAG pipelines and backend APIs for an enterprise AI-testing platform.",
     "What keeps me interested is the gap between a model that works in a notebook and a product that people can trust. I enjoy designing the APIs, validation, retrieval, and user flow that close that gap.",
   ],
@@ -73,21 +73,21 @@ export const workingStyle = [
 
 export const education = [
   {
-    school: "RGUKT Nuzvid",
+    school: "Rajiv Gandhi University of Knowledge Technologies, Nuzvid",
     detail: "B.Tech Computer Science & Engineering",
     date: "Sep 2023 – May 2027",
     note: "CGPA 8.99",
   },
   {
-    school: "RGUKT Nuzvid",
-    detail: "Pre-University Certificate",
+    school: "Rajiv Gandhi University of Knowledge Technologies, Nuzvid",
+    detail: "Pre-University Course",
     date: "Dec 2021 – Aug 2023",
     note: "CGPA 9.85",
   },
 ];
 
 export const highlights = [
-  { value: "8.99", label: "CGPA at RGUKT Nuzvid" },
+  { value: "8.99", label: "CGPA at Rajiv Gandhi University of Knowledge Technologies, Nuzvid" },
   { value: "AIR 3863", label: "GATE DS & AI 2026" },
   { value: "1st", label: "AI4Andhra Police Hackathon" },
 ];
@@ -237,6 +237,7 @@ export const caseStudies = [
       "Built FastAPI microservices for document intake, processing, and retrieval.",
       "Trained custom YOLO models for signature and stamp detection.",
     ],
+    pipeline: ["Police files", "Extract", "Validate", "Detect", "Structured data"],
     outcomes: ["90% less manual processing", "97% detection precision", "1st place at AI4Andhra"],
     tags: ["FastAPI", "Azure Document Intelligence", "YOLO", "Python"],
     link: "https://drive.google.com/file/d/1f2v4SdQO-AxHeYMBXG1ckBTMNVhgW-yK/view",
@@ -253,6 +254,7 @@ export const caseStudies = [
       "Used Gemini 1.5 Flash to classify hazards and identify duplicate locations.",
       "Added before-and-after image checks to verify that reported work was completed.",
     ],
+    pipeline: ["Report", "Classify", "Deduplicate", "Assign", "Verify"],
     outcomes: ["Live end-to-end platform", "AI-assisted triage", "Visual completion checks"],
     tags: ["React", "FastAPI", "MongoDB", "Gemini"],
     link: "https://vibe2-ship-pearl.vercel.app/",
@@ -293,7 +295,7 @@ export const achievements = [
   },
   {
     title: "1st place — SIH internal hackathon",
-    organization: "RGUKT Nuzvid",
+    organization: "Rajiv Gandhi University of Knowledge Technologies, Nuzvid",
     description: "First among 200+ teams in the Smart India Hackathon campus round.",
   },
 ];

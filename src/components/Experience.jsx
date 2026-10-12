@@ -9,7 +9,7 @@ const Experience = () => {
     <section id="work" className="scroll-mt-20">
       <div className="mx-auto max-w-page px-5 py-16 sm:px-8 sm:py-24">
         <Reveal>
-          <p className="text-sm font-medium uppercase tracking-[0.16em] text-mint">Work</p>
+          <p className="lab-kicker">Work</p>
           <h2 className="mt-2 font-serif text-4xl tracking-tight text-cream sm:text-5xl">Where I've built</h2>
         </Reveal>
 
@@ -27,7 +27,7 @@ const Experience = () => {
             <Reveal key={job.company} delay={index * 0.08}>
               <motion.article
                 whileHover={reduce ? undefined : { y: -6 }}
-                className="card-shine relative rounded-2xl border border-line bg-card/80 p-6 sm:p-7"
+                className="card-shine lab-frame relative rounded-2xl border border-line bg-card/80 p-6 sm:p-7"
               >
                 <span className="absolute -left-8 top-8 hidden h-3.5 w-3.5 rounded-full border-2 border-mint bg-night shadow-[0_0_0_4px_rgb(var(--night))] sm:block" />
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">

@@ -8,11 +8,11 @@ const Achievements = () => {
   return (
     <section className="mx-auto max-w-page px-5 py-16 sm:px-8 sm:py-24">
       <Reveal>
-        <p className="text-sm font-medium uppercase tracking-[0.16em] text-mint">Achievements</p>
+        <p className="lab-kicker">Achievements</p>
         <h2 className="mt-2 font-serif text-4xl tracking-tight text-cream sm:text-5xl">A few results</h2>
       </Reveal>
 
-      <ol className="mt-8 overflow-hidden rounded-2xl border border-line bg-card/70">
+      <ol className="lab-frame mt-8 overflow-hidden rounded-2xl border border-line bg-card/70">
         {achievements.map((item, index) => (
           <Reveal key={item.title} delay={index * 0.05}>
             <motion.li

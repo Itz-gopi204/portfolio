@@ -65,7 +65,7 @@ const Contact = () => {
     <section id="contact" className="scroll-mt-20">
       <div className="mx-auto grid max-w-page gap-10 px-5 py-16 sm:px-8 sm:py-24 md:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
-          <p className="text-sm font-medium uppercase tracking-[0.16em] text-mint">Contact</p>
+          <p className="lab-kicker">Contact</p>
           <h2 className="mt-2 font-serif text-4xl tracking-tight text-cream sm:text-5xl">Say hello</h2>
           <p className="mt-4 max-w-sm leading-relaxed text-mist">
             If you have a role, a project, or a problem worth building for, send a note. I read everything.
@@ -97,7 +97,7 @@ const Contact = () => {
           <motion.form
             onSubmit={handleSubmit}
             whileHover={reduce ? undefined : { y: -4 }}
-            className="rounded-2xl border border-line bg-card/80 p-6 shadow-glow sm:p-7"
+            className="lab-frame rounded-2xl border border-line bg-card/80 p-6 shadow-glow sm:p-7"
           >
             <label className="block text-sm text-cream" htmlFor="name">
               Name

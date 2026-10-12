@@ -36,7 +36,7 @@
 
 ## About Me
 
-I'm an AI/ML Engineer and Full-Stack Developer currently pursuing B.Tech in Computer Science at RGUKT Nuzvid (CGPA: 8.92, Expected May 2027). I specialize in building AI-powered solutions that solve real-world problems.
+I'm an AI/ML Engineer and Full-Stack Developer currently pursuing B.Tech in Computer Science at Rajiv Gandhi University of Knowledge Technologies, Nuzvid (CGPA: 8.99, Expected May 2027). I specialize in building AI-powered solutions that solve real-world problems.
 
 **Currently:**
 - AI Engineer Intern (Team Lead) at **4SightAI** - Building production systems for government clients
@@ -95,7 +95,7 @@ AI agent built during Google Agentic AI Day hackathon — automates financial qu
 | Achievement | Organization |
 |-------------|--------------|
 | Winner — AI4AndhraPolice Hackathon | AP State Police Department |
-| 1st Place — SIH Internal Hackathon | RGUKT Nuzvid |
+| 1st Place — SIH Internal Hackathon | Rajiv Gandhi University of Knowledge Technologies, Nuzvid |
 | Best UI/UX Award — HackToCrack | Viswaniketan-IMEET National Hackathon |
 | Finalist — Google Agentic AI Day | Google Cloud |
 

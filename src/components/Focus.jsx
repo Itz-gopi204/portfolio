@@ -8,11 +8,18 @@ const Focus = () => {
   return (
     <section className="mx-auto max-w-page px-5 py-16 sm:px-8 sm:py-24">
       <Reveal>
-        <div className="overflow-hidden rounded-3xl border border-line bg-card/80">
+        <div className="lab-frame overflow-hidden rounded-3xl border border-line bg-card/80">
+          <div className="flex flex-wrap items-center justify-between gap-3 border-b border-line px-6 py-3 text-[9px] font-semibold uppercase tracking-[0.16em] text-mist sm:px-8">
+            <span>Module / Current assignment</span>
+            <span className="flex items-center gap-2 text-mint">
+              <span className="h-1.5 w-1.5 rounded-full bg-mint shadow-[0_0_10px_rgb(var(--mint))]" />
+              Running
+            </span>
+          </div>
           <div className="grid lg:grid-cols-[0.9fr_1.1fr]">
             <div className="relative border-b border-line p-6 sm:p-8 lg:border-b-0 lg:border-r">
               <div className="absolute right-0 top-0 h-48 w-48 rounded-full bg-mint/10 blur-3xl" />
-              <p className="relative text-sm font-medium uppercase tracking-[0.16em] text-mint">
+              <p className="lab-kicker relative">
                 {currentFocus.eyebrow}
               </p>
               <h2 className="relative mt-3 max-w-md font-serif text-3xl tracking-tight text-cream sm:text-4xl">
@@ -38,7 +45,7 @@ const Focus = () => {
       </Reveal>
 
       <Reveal className="mt-16">
-        <p className="text-sm font-medium uppercase tracking-[0.16em] text-mint">How I work</p>
+        <p className="lab-kicker">How I work</p>
         <h2 className="mt-2 font-serif text-4xl tracking-tight text-cream sm:text-5xl">
           From real problem to shipped system
         </h2>
@@ -49,9 +56,12 @@ const Focus = () => {
           <Reveal key={step.number} delay={index * 0.07}>
             <motion.article
               whileHover={reduce ? undefined : { y: -6 }}
-              className="h-full rounded-2xl border border-line bg-card/70 p-5"
+              className="lab-frame h-full rounded-2xl border border-line bg-card/70 p-5"
             >
-              <p className="font-serif text-2xl text-mint">{step.number}</p>
+              <div className="flex items-center justify-between">
+                <p className="font-serif text-2xl text-mint">{step.number}</p>
+                <span className="text-[9px] uppercase tracking-[0.16em] text-mist">Process node</span>
+              </div>
               <h3 className="mt-5 font-medium text-cream">{step.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-mist">{step.description}</p>
             </motion.article>

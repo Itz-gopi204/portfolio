@@ -24,6 +24,21 @@ const Backdrop = () => {
         style={{ scaleX }}
       />
       <div className="grid-fade absolute inset-0" />
+      <svg
+        aria-hidden
+        viewBox="0 0 1440 900"
+        preserveAspectRatio="xMidYMid slice"
+        className="absolute inset-0 h-full w-full opacity-70"
+      >
+        <path className="lab-route" d="M-40 170H210L286 246H520L596 170H830" />
+        <path className="lab-route" d="M1440 310H1200L1124 386H940L864 462H710" />
+        <path className="lab-route" d="M80 760H330L406 684H640L716 760H980L1056 684H1440" />
+        <circle className="lab-node" cx="286" cy="246" r="5" />
+        <circle className="lab-node" cx="596" cy="170" r="5" />
+        <circle className="lab-node" cx="1124" cy="386" r="5" />
+        <circle className="lab-node" cx="406" cy="684" r="5" />
+        <circle className="lab-node" cx="1056" cy="684" r="5" />
+      </svg>
       <motion.div
         className="absolute -left-24 top-10 h-80 w-80 rounded-full bg-emerald-400/20 blur-3xl"
         animate={reduce ? undefined : { x: [0, 50, 0], y: [0, 30, 0] }}
