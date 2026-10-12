@@ -62,7 +62,7 @@ const Contact = () => {
     "mt-1.5 w-full rounded-xl border border-line bg-night/60 px-4 py-3 text-cream outline-none transition placeholder:text-mist/60 focus:border-mint";
 
   return (
-    <section id="contact" className="scroll-mt-20">
+    <section id="contact" className="scroll-mt-28">
       <div className="mx-auto grid max-w-page gap-10 px-5 py-16 sm:px-8 sm:py-24 md:grid-cols-[0.85fr_1.15fr]">
         <Reveal>
           <p className="lab-kicker">Contact</p>

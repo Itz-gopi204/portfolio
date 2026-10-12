@@ -6,7 +6,7 @@ const CaseStudies = () => {
   const reduce = useReducedMotion();
 
   return (
-    <section id="case-studies" className="scroll-mt-20 border-y border-line bg-card/30">
+    <section id="case-studies" className="scroll-mt-28 border-y border-line bg-card/30">
       <div className="mx-auto max-w-page px-5 py-16 sm:px-8 sm:py-24">
         <Reveal>
           <p className="lab-kicker">Case studies</p>

@@ -6,7 +6,7 @@ const Experience = () => {
   const reduce = useReducedMotion();
 
   return (
-    <section id="work" className="scroll-mt-20">
+    <section id="work" className="scroll-mt-28">
       <div className="mx-auto max-w-page px-5 py-16 sm:px-8 sm:py-24">
         <Reveal>
           <p className="lab-kicker">Work</p>

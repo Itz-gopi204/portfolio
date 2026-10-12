@@ -9,7 +9,7 @@ const About = () => {
   const loop = [...marqueeItems, ...marqueeItems];
 
   return (
-    <section id="about" className="scroll-mt-20 mx-auto max-w-page px-5 py-16 sm:px-8 sm:py-24">
+    <section id="about" className="scroll-mt-28 mx-auto max-w-page px-5 py-16 sm:px-8 sm:py-24">
       <Reveal>
         <p className="lab-kicker">About</p>
         <h2 className="mt-2 font-serif text-4xl tracking-tight text-cream sm:text-5xl">What I actually do</h2>
