@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { about, education, technologies } from "../constants";
+import { about, education, recruiterSnapshot, technologies } from "../constants";
 import Reveal from "./Reveal";
 
 const marqueeItems = technologies.flatMap((group) => group.items);
@@ -15,12 +15,28 @@ const About = () => {
         <h2 className="mt-2 font-serif text-4xl tracking-tight text-cream sm:text-5xl">What I actually do</h2>
       </Reveal>
 
-      <div className="mt-6 max-w-2xl space-y-4 text-base leading-relaxed text-mist">
-        {about.paragraphs.map((paragraph, index) => (
-          <Reveal key={paragraph} delay={0.08 * index}>
-            <p>{paragraph}</p>
-          </Reveal>
-        ))}
+      <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-start">
+        <div className="space-y-4 text-base leading-relaxed text-mist">
+          {about.paragraphs.map((paragraph, index) => (
+            <Reveal key={paragraph} delay={0.08 * index}>
+              <p>{paragraph}</p>
+            </Reveal>
+          ))}
+        </div>
+
+        <Reveal delay={0.12}>
+          <aside className="rounded-2xl border border-line bg-card/80 p-5">
+            <p className="text-xs font-medium uppercase tracking-[0.16em] text-mint">Quick profile</p>
+            <dl className="mt-4 divide-y divide-line">
+              {recruiterSnapshot.map((item) => (
+                <div key={item.label} className="grid grid-cols-[6rem_1fr] gap-3 py-3 first:pt-0 last:pb-0">
+                  <dt className="text-sm text-mist">{item.label}</dt>
+                  <dd className="text-sm font-medium text-cream">{item.value}</dd>
+                </div>
+              ))}
+            </dl>
+          </aside>
+        </Reveal>
       </div>
 
       <Reveal>

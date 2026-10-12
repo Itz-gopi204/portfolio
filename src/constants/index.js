@@ -7,6 +7,7 @@ export const navLinks = [
   { id: "about", title: "About" },
   { id: "work", title: "Work" },
   { id: "projects", title: "Projects" },
+  { id: "case-studies", title: "Case studies" },
   { id: "contact", title: "Contact" },
 ];
 
@@ -24,8 +25,51 @@ export const about = {
   paragraphs: [
     "I'm a Computer Science student at RGUKT Nuzvid (CGPA 8.99). I like taking a real problem — a police form, a gig worker's budget, a clinic's website — and shipping something that works in production.",
     "Most of my work sits between models and software: agent systems, computer vision, and FastAPI services, plus freelance web and mobile apps. I'm also a software engineer intern at Qualizeal, building RAG pipelines and backend APIs for an enterprise AI-testing platform.",
+    "What keeps me interested is the gap between a model that works in a notebook and a product that people can trust. I enjoy designing the APIs, validation, retrieval, and user flow that close that gap.",
   ],
 };
+
+export const recruiterSnapshot = [
+  { label: "Current", value: "SDE Intern at Qualizeal" },
+  { label: "Graduating", value: "May 2027" },
+  { label: "Focus", value: "AI systems & backend APIs" },
+  { label: "Track record", value: "Pilots, wins & freelance delivery" },
+];
+
+export const currentFocus = {
+  eyebrow: "What I'm building now",
+  title: "Evaluation infrastructure for enterprise AI",
+  description:
+    "At Qualizeal, I'm working on ValidAite: an AI-testing platform that turns documents and test requirements into repeatable evaluation workflows.",
+  points: [
+    "Backend modules covering 12 RMTE use cases across risk, metrics, testing, and evidence.",
+    "Modular FastAPI APIs that orchestrate evaluation workflows.",
+    "A RAG pipeline that generates prompts and ground-truth answers, reducing manual QA-pair writing time by 60%.",
+  ],
+};
+
+export const workingStyle = [
+  {
+    number: "01",
+    title: "Understand the workflow",
+    description: "Start with the people, documents, constraints, and failure points—not with a model.",
+  },
+  {
+    number: "02",
+    title: "Design the reliable core",
+    description: "Choose the simplest architecture that makes extraction, validation, and APIs easy to test.",
+  },
+  {
+    number: "03",
+    title: "Measure what improved",
+    description: "Track precision, time saved, false alarms, and manual steps so the result is concrete.",
+  },
+  {
+    number: "04",
+    title: "Ship the whole experience",
+    description: "Connect the intelligence to a usable interface, deploy it, and learn from real feedback.",
+  },
+];
 
 export const education = [
   {
@@ -178,6 +222,41 @@ export const projects = [
     accent: "from-sky-300/50 via-cyan-300/10",
     link: "https://newbalanpharmacy.com",
     linkLabel: "Live site",
+  },
+];
+
+export const caseStudies = [
+  {
+    number: "01",
+    name: "DOCS2DATA",
+    context: "Andhra Pradesh Police · Document intelligence",
+    challenge:
+      "Police documents arrive as inconsistent scans with complex fields, signatures, and stamps. Turning them into dependable structured data required more than basic OCR.",
+    contribution: [
+      "Designed extraction pipelines with Azure Document Intelligence and rule-based validation.",
+      "Built FastAPI microservices for document intake, processing, and retrieval.",
+      "Trained custom YOLO models for signature and stamp detection.",
+    ],
+    outcomes: ["90% less manual processing", "97% detection precision", "1st place at AI4Andhra"],
+    tags: ["FastAPI", "Azure Document Intelligence", "YOLO", "Python"],
+    link: "https://drive.google.com/file/d/1f2v4SdQO-AxHeYMBXG1ckBTMNVhgW-yK/view",
+    linkLabel: "View work sample",
+  },
+  {
+    number: "02",
+    name: "Community Hero",
+    context: "Civic technology · Live platform",
+    challenge:
+      "Civic issue reporting needs more than a form: reports must be classified, duplicate locations identified, work assigned, and completion verified.",
+    contribution: [
+      "Built role-based workflows with React, FastAPI, and MongoDB.",
+      "Used Gemini 1.5 Flash to classify hazards and identify duplicate locations.",
+      "Added before-and-after image checks to verify that reported work was completed.",
+    ],
+    outcomes: ["Live end-to-end platform", "AI-assisted triage", "Visual completion checks"],
+    tags: ["React", "FastAPI", "MongoDB", "Gemini"],
+    link: "https://vibe2-ship-pearl.vercel.app/",
+    linkLabel: "Open live platform",
   },
 ];
 

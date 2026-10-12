@@ -1,5 +1,15 @@
 import { motion } from "framer-motion";
-import { About, Achievements, Contact, Experience, Hero, Navbar, Works } from "./components";
+import {
+  About,
+  Achievements,
+  CaseStudies,
+  Contact,
+  Experience,
+  Focus,
+  Hero,
+  Navbar,
+  Works,
+} from "./components";
 import Backdrop from "./components/Backdrop";
 import { phone, socialLinks } from "./constants";
 
@@ -11,8 +21,10 @@ const App = () => {
       <main>
         <Hero />
         <About />
+        <Focus />
         <Experience />
         <Works />
+        <CaseStudies />
         <Achievements />
         <Contact />
       </main>

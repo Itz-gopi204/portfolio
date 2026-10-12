@@ -15,12 +15,12 @@
 }
 
 :root.light {
-  --night: 246 244 239;
-  --card: 255 255 255;
-  --cream: 28 25 23;
-  --mist: 95 89 82;
-  --line: 226 221 211;
-  --mint: 13 120 90;
+  --night: 214 206 190;
+  --card: 255 249 239;
+  --cream: 39 32 26;
+  --mist: 92 78 66;
+  --line: 186 172 152;
+  --mint: 10 102 74;
   color-scheme: light;
 }
 
@@ -35,6 +35,30 @@ body {
   font-family: "Outfit", "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:root.light body {
+  background:
+    radial-gradient(ellipse 78% 48% at 0% -6%, rgb(18 132 92 / 0.28), transparent 56%),
+    radial-gradient(ellipse 62% 42% at 100% 0%, rgb(196 122 42 / 0.24), transparent 50%),
+    radial-gradient(ellipse 50% 36% at 70% 100%, rgb(92 78 160 / 0.12), transparent 55%),
+    rgb(var(--night));
+}
+
+:root.light .grid-fade {
+  background-image:
+    linear-gradient(to right, rgb(70 52 32 / 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(70 52 32 / 0.09) 1px, transparent 1px);
+}
+
+:root.light .card-shine,
+:root.light aside,
+:root.light #case-studies article {
+  box-shadow: 0 22px 50px -34px rgb(72 48 24 / 0.7);
+}
+
+:root.light #case-studies article {
+  background: rgb(var(--card) / 0.92);
 }
 
 ::selection {

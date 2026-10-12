@@ -53,7 +53,7 @@ const Navbar = () => {
           Gopi
         </a>
 
-        <nav className="ml-auto hidden items-center gap-7 md:flex">
+        <nav className="ml-auto hidden items-center gap-5 lg:gap-7 md:flex">
           {navLinks.map((link) => (
             <button
               key={link.id}
