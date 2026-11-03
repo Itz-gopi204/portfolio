@@ -12,7 +12,7 @@ const Works = () => {
           <p className="lab-kicker">Projects</p>
           <h2 className="mt-2 font-serif text-4xl tracking-tight text-cream sm:text-5xl">Selected work</h2>
           <p className="mt-3 max-w-xl text-mist">
-            Production systems, hackathon builds, and a freelance product that is live.
+            AI interviewing, voice products, production systems, and a live freelance site.
           </p>
         </Reveal>
 

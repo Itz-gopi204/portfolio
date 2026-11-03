@@ -102,11 +102,12 @@ export const socialLinks = [
 export const email = "gopimahamkali3101@gmail.com";
 export const phone = "+91 8309383698";
 export const resumeUrl = "/resume.pdf";
+export const resumeFileName = "Gopi_Resume.pdf";
 
 export const technologies = [
   {
     category: "Languages",
-    items: ["Python", "C++", "SQL"],
+    items: ["Python", "C++", "Java", "SQL"],
   },
   {
     category: "AI / ML",
@@ -114,7 +115,7 @@ export const technologies = [
   },
   {
     category: "Web & API",
-    items: ["FastAPI", "React", "Vite", "REST APIs"],
+    items: ["FastAPI", "Node.js", "Flask", "React", "Vite", "REST APIs"],
   },
   {
     category: "Data",
@@ -173,6 +174,26 @@ export const experiences = [
 
 export const projects = [
   {
+    name: "SignalForge",
+    metric: "40% less scheduling work",
+    description:
+      "A multi-tenant AI interviewing platform with three roles and role-based access. OpenAI Realtime, Deepgram, and WebRTC run live voice interviews under 500ms, with transcription above 95%. PostgreSQL and Prisma store sessions, transcripts, and evaluations.",
+    tags: ["FastAPI", "PostgreSQL", "WebRTC", "OpenAI"],
+    accent: "from-rose-200/50 via-pink-400/10",
+    link: "https://github.com/Itz-gopi204/SignalForge",
+    linkLabel: "GitHub",
+  },
+  {
+    name: "Voice-Based Email",
+    metric: "98% transcription accuracy",
+    description:
+      "A hands-free email client. Whisper, gTTS, and the Gmail API sit behind a Flask backend, so composing, searching, and managing mail works through 25+ voice commands.",
+    tags: ["Flask", "Whisper", "Gmail API"],
+    accent: "from-indigo-300/50 via-blue-400/10",
+    link: "https://github.com/Itz-gopi204/Voice-Based-EMail-System",
+    linkLabel: "GitHub",
+  },
+  {
     name: "Community Hero",
     metric: "Live civic platform",
     description:
@@ -190,7 +211,7 @@ export const projects = [
     tags: ["Python", "FastAPI", "Computer vision"],
     accent: "from-emerald-300/50 via-teal-400/10",
     logo: appolice,
-    link: "https://github.com/Gopi-Mahamkali",
+    link: "https://github.com/Itz-gopi204/TripleD-AI4AP-Police_Doc2Data",
     linkLabel: "GitHub",
   },
   {
@@ -200,7 +221,7 @@ export const projects = [
       "A financial companion for India's gig workers. Twelve AutoGen agents on Azure OpenAI handle income, spending swings, budgets, and matches across 200+ government schemes.",
     tags: ["AutoGen", "Azure OpenAI", "FastAPI"],
     accent: "from-amber-200/50 via-orange-300/10",
-    link: "https://github.com/Gopi-Mahamkali",
+    link: "https://github.com/Itz-gopi204/KAMAI",
     linkLabel: "GitHub",
   },
   {
@@ -271,9 +292,9 @@ export const achievements = [
     linkLabel: "Scorecard",
   },
   {
-    title: "200+ problems on LeetCode",
-    organization: "LeetCode",
-    description: "Solved 200+ problems across core data structures and algorithms.",
+    title: "400+ problems on LeetCode and TUF",
+    organization: "LeetCode · TakeUForward",
+    description: "Solved 400+ data structures and algorithms problems on LeetCode and TakeUForward (TUF).",
     link: "https://leetcode.com/u/gopi_3101/",
     linkLabel: "Profile",
   },
@@ -286,7 +307,7 @@ export const achievements = [
   {
     title: "Finalist — HackRx 6.0",
     organization: "Bajaj Finserv",
-    description: "Finalist in Bajaj Finserv's GenAI hackathon, among 1000+ teams.",
+    description: "Top 50 in Bajaj Finserv's GenAI hackathon, among 1000+ teams.",
   },
   {
     title: "Best UI/UX — Hack To Crack 2.0",

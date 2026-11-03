@@ -1,6 +1,6 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
-import { navLinks, resumeUrl } from "../constants";
+import { navLinks, resumeFileName, resumeUrl } from "../constants";
 import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
@@ -77,13 +77,12 @@ const Navbar = () => {
           ))}
           <motion.a
             href={resumeUrl}
-            target="_blank"
-            rel="noreferrer"
+            download={resumeFileName}
             whileHover={reduce ? undefined : { y: -2 }}
             whileTap={reduce ? undefined : { scale: 0.98 }}
             className="rounded-full bg-cream px-4 py-2 text-sm font-medium text-night"
           >
-            Resume
+            Download
           </motion.a>
         </nav>
 
@@ -119,8 +118,11 @@ const Navbar = () => {
                 {link.title}
               </button>
             ))}
-            <a href={resumeUrl} target="_blank" rel="noreferrer" className="inline-block py-3 text-mint">
-              Resume
+            <a href={resumeUrl} download={resumeFileName} className="block py-3 text-mint">
+              Download resume
+            </a>
+            <a href={resumeUrl} target="_blank" rel="noreferrer" className="inline-block pb-4 text-cream">
+              View resume
             </a>
           </motion.nav>
         )}

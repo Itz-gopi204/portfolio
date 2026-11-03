@@ -1,5 +1,14 @@
 import { motion, useReducedMotion } from "framer-motion";
-import { email, hero, highlights, phone, profileImage, resumeUrl, socialLinks } from "../constants";
+import {
+  email,
+  hero,
+  highlights,
+  phone,
+  profileImage,
+  resumeFileName,
+  resumeUrl,
+  socialLinks,
+} from "../constants";
 
 const ease = [0.22, 1, 0.36, 1];
 
@@ -60,11 +69,20 @@ const Hero = () => {
             </motion.a>
             <motion.a
               href={resumeUrl}
+              download={resumeFileName}
+              whileHover={reduce ? undefined : { y: -3 }}
+              whileTap={reduce ? undefined : { scale: 0.98 }}
+              className="rounded-full border border-line bg-card/80 px-5 py-2.5 text-sm font-medium text-cream"
+            >
+              Download resume
+            </motion.a>
+            <motion.a
+              href={resumeUrl}
               target="_blank"
               rel="noreferrer"
               whileHover={reduce ? undefined : { y: -3 }}
               whileTap={reduce ? undefined : { scale: 0.98 }}
-              className="rounded-full border border-line bg-card/80 px-5 py-2.5 text-sm font-medium text-cream"
+              className="rounded-full border border-line px-5 py-2.5 text-sm font-medium text-mist transition-colors hover:text-cream"
             >
               View resume
             </motion.a>
